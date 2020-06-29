@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { RoomsModule } from './pages/rooms/rooms.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { MaterialModule } from './material.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    RoomsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
