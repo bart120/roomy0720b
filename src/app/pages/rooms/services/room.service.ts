@@ -39,15 +39,30 @@ export class RoomService {
             )
         );
 
-
         let obsTimer = timer(0, 10000);
 
         let obsHttp = this.http.get<Array<RoomModel>>(environment.urlRooms).pipe(
-            map(data => data.splice(0, 5))
+            map(data => data.sort((a, b) => a.price < b.price ? 1 : -1).splice(0, 5))
         );
 
         let newObs = obsTimer.pipe(mergeMap(() => obsHttp));
 
         return newObs;
+    }
+
+    getById(id: number): Observable<RoomModel> {
+        return this.http.get<RoomModel>(`${environment.urlRooms}/${id}`);
+    }
+
+    insert(room: RoomModel): Observable<RoomModel> {
+        return this.http.post<RoomModel>(environment.urlRooms, room);
+    }
+
+    update(room: RoomModel): Observable<RoomModel> {
+        return this.http.put<RoomModel>(`${environment.urlRooms}/${room.id}`, room);
+    }
+
+    delete(id: number): Observable<RoomModel> {
+        return this.http.delete<RoomModel>(`${environment.urlRooms}/${id}`);
     }
 }
