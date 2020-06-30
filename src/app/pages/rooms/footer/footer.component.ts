@@ -17,7 +17,15 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.rooms = this.serv.getAllRooms();
+
+    this.serv.getAllRooms().subscribe(
+      data => {
+        this.rooms = data;
+      }
+    );
+
+
+    //this.rooms = this.serv.getAllRooms();
     /* this.rooms = [
        { name: 'Pegase', image: 'Pegase.jpg' },
        { name: 'Calliope', image: 'Calliope.jpg' },
