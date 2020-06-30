@@ -18,7 +18,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.serv.getAllRooms().subscribe(
+    this.serv.getTopFive().subscribe(
       data => {
         this.rooms = data;
       }
