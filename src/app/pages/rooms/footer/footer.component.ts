@@ -8,15 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  rooms = [
-    { name: 'Pegase', image: 'Pegase.jpg' },
-    { name: 'Calliope', image: 'Calliope.jpg' },
-    { name: 'Uranie', image: 'Uranie.jpg' }
-  ];
+  rooms = null;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.rooms = [
+      { name: 'Pegase', image: 'Pegase.jpg' },
+      { name: 'Calliope', image: 'Calliope.jpg' },
+      { name: 'Uranie', image: 'Uranie.jpg' }
+    ];
   }
 
 }

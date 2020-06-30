@@ -1,11 +1,14 @@
 <div>
-    <h3>Top 5</h3>
+    <h3>Top {{rooms?.length}}</h3>
 
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>NOM</mat-card-title>
-        </mat-card-header>
-        <img matCardImage src="assets/images/Pegase.jpg" />
-    </mat-card>
-
+    <mat-grid-list cols="5">
+        <mat-grid-tile *ngFor="let room of rooms">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{room?.name}}</mat-card-title>
+                </mat-card-header>
+                <img matCardImage src="assets/images/{{room?.image}}" />
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>
