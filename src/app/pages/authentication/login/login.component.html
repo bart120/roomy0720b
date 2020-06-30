@@ -1,6 +1,6 @@
 <h1>Connexion</h1>
 
-<form class="log">
+<form class="log" *ngIf="user == null; else nolog">
     <mat-form-field>
         <input matInput type="email" placeholder="Login" #email (keyup.enter)="password.focus()" />
     </mat-form-field>
@@ -12,3 +12,12 @@
         <button type="button" mat-button (click)="onLogin(email.value, $event)">Se connecter</button>
     </div>
 </form>
+
+<ng-template #nolog>
+    <div class="log">
+        Bonjour {{user?.name}}.
+        <div>
+            <button mat-button color="primary" type="button" (click)="onLogout()">Se déconnecter</button>
+        </div>
+    </div>
+</ng-template>
