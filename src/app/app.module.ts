@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { RoomsModule } from './pages/rooms/rooms.module';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from './app.routes';
 
 
 @NgModule({
@@ -14,6 +16,7 @@ import { RoomsModule } from './pages/rooms/rooms.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(APP_ROUTES),
     MaterialModule,
     RoomsModule
   ],
