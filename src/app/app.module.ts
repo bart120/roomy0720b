@@ -7,6 +7,7 @@ import { MaterialModule } from './material.module';
 import { RoomsModule } from './pages/rooms/rooms.module';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { APP_ROUTES } from './app.routes';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(APP_ROUTES),
+    HttpClientModule,
     MaterialModule,
     RoomsModule
   ],
