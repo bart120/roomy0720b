@@ -30,7 +30,6 @@ export class RoomService {
     }
 
     getTopFive(): Observable<Array<RoomModel>> {
-
         return timer(0, 10000).pipe(
             mergeMap(
                 () => this.http.get<Array<RoomModel>>(environment.urlRooms).pipe(

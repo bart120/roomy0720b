@@ -20,7 +20,7 @@
 
             <td>{{room.price | currency: '€'}}</td>
             <td>
-                <a mat-button>
+                <a [routerLink]="['/room/detail/', room.id]" mat-button>
                     <mat-icon>search</mat-icon>
                 </a>
             </td>
