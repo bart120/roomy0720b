@@ -1,1 +1,30 @@
-<p>list-room works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Capacité</th>
+            <th>Prix</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="rooms == null">
+            <td colspan="4">
+                <mat-spinner></mat-spinner>
+                Chargement ...
+            </td>
+        </tr>
+        <tr *ngFor="let room of rooms">
+            <td>{{room.name | uppercase}}</td>
+            <td>{{room.seatCount | number:'5.2'}}</td>
+
+            <td>{{room.price | currency: '€'}}</td>
+            <td>
+                <a mat-button>
+                    <mat-icon>search</mat-icon>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
