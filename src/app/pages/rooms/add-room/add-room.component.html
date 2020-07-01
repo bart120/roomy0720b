@@ -1,1 +1,28 @@
-<p>add-room works!</p>
+<h3>Ajouter une salle</h3>
+
+<form class="log" [formGroup]="formRoom" (ngSubmit)="submit()">
+    <mat-form-field>
+        <input matInput type="text" placeholder="Nom" formControlName="name" />
+        <mat-error>Le nom est obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="text" placeholder="Prix" formControlName="price" />
+        <mat-error>Le prix est obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="number" placeholder="Places" formControlName="seatCount" />
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Image" formControlName="image">
+            <mat-option *ngFor="let p of pictures" [value]="p.file">{{p.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div>
+        <button type="submit" mat-button disabled={{formRoom.invalid}}>Enretgistrer</button>
+    </div>
+
+</form>
