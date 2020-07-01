@@ -17,7 +17,11 @@
             <mat-icon aria-hidden="false">locked_in</mat-icon>
             Connexion
         </a>
+        <span *ngIf="user">
+            Bonjour {{user?.name}}
+        </span>
     </div>
+
 </mat-toolbar>
 
 <router-outlet></router-outlet>
